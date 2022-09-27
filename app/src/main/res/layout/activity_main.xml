@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:paddingBottom="8dp"
-        android:src="@drawable/Calc" />
+        android:src="@drawable/calc" />
 
     <TextView
         android:id="@+id/pedir_n1"
@@ -47,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
+        android:inputType="number"
         android:hint="@string/n1"/>
 
     <TextView
@@ -54,14 +55,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="@string/pedir_n1"/>
+        android:text="@string/pedir_n2"/>
 
     <EditText
         android:id="@+id/n2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:hint="@string/pedir_n2"/>
+        android:inputType="number"
+        android:hint="@string/n2"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:gravity="center"
-            android:text="@string/sumar"/>
+            android:text="@string/sumar"
+            />
 
         <Button
             android:id="@+id/resta"
@@ -101,6 +104,19 @@
             android:text="@string/dividir"/>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/instruccion_resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado"/>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25dp"/>
 
 
 
