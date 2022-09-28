@@ -11,4 +11,5 @@
     <string name="mult">MULT</string>
     <string name="dividir">DIVIDIR</string>
     <string name="resultado">El resultado de la operación es:</string>
+    <string name="error">No introduzcas caracteres no numéricos</string>
 </resources>

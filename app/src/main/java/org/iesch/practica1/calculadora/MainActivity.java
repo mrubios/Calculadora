@@ -8,25 +8,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.iesch.practica1.calculadora.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         //Inicializamos los objetos donde sacaremos los datos
-        EditText n1 = findViewById(R.id.n1);
-        EditText n2 = findViewById(R.id.n2);
-        Button btnSuma = findViewById(R.id.suma);
-        Button btnResta = findViewById(R.id.resta);
-        Button btnMultiplicacion = findViewById(R.id.multi);
-        Button btnDivision = findViewById(R.id.div);
-        TextView resultado = findViewById(R.id.resultado);
+        EditText n1 = binding.n1;
+        EditText n2 = binding.n2;
+        Button btnSuma = binding.suma;
+        Button btnResta = binding.resta;
+        Button btnMultiplicacion = binding.multi;
+        Button btnDivision = binding.div;
+        TextView resultado = binding.resultado;
 
-        btnSuma.setOnClickListener(v -> {
+        binding.suma.setOnClickListener(v -> {
             //Al hacer click queremos capturar el texto introducido
-            double num1 = 0;
-            double num2 = 0;
+            int num1 = 0;
+            int num2 = 0;
             try {
                 String numero1 = n1.getText().toString();
                 if (!numero1.isEmpty()){
@@ -41,22 +44,22 @@ public class MainActivity extends AppCompatActivity {
                     num2 = 0;
                 }
 
-                double result = num1 + num2;
-                resultado.setText(String.valueOf(result));
+                int result = num1 + num2;
+                binding.resultado.setText(String.valueOf(result));
 
             }
             catch (Exception e)
             {
-                Toast.makeText(this, "No introduzcas caracteres no numéricos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
             }
 
 
         });
 
-        btnResta.setOnClickListener(v -> {
+        binding.resta.setOnClickListener(v -> {
             //Al hacer click queremos capturar el texto introducido
-            double num1 = 0;
-            double num2 = 0;
+            int num1 = 0;
+            int num2 = 0;
             try {
                 String numero1 = n1.getText().toString();
                 if (!numero1.isEmpty()){
@@ -71,22 +74,22 @@ public class MainActivity extends AppCompatActivity {
                     num2 = 0;
                 }
 
-                double result = num1 - num2;
-                resultado.setText(String.valueOf(result));
+                int result = num1 - num2;
+                binding.resultado.setText(String.valueOf(result));
 
             }
             catch (Exception e)
             {
-                Toast.makeText(this, "No introduzcas caracteres no numéricos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
             }
 
 
         });
 
-        btnMultiplicacion.setOnClickListener(v -> {
+        binding.multi.setOnClickListener(v -> {
             //Al hacer click queremos capturar el texto introducido
-            double num1 = 0;
-            double num2 = 0;
+            int num1 = 0;
+            int num2 = 0;
             try {
                 String numero1 = n1.getText().toString();
                 if (!numero1.isEmpty()){
@@ -101,19 +104,19 @@ public class MainActivity extends AppCompatActivity {
                     num2 = 0;
                 }
 
-                double result = num1 * num2;
-                resultado.setText(String.valueOf(result));
+                int result = num1 * num2;
+                binding.resultado.setText(String.valueOf(result));
 
             }
             catch (Exception e)
             {
-                Toast.makeText(this, "No introduzcas caracteres no numéricos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
             }
 
 
         });
 
-        btnDivision.setOnClickListener(v -> {
+        binding.div.setOnClickListener(v -> {
             //Al hacer click queremos capturar el texto introducido
             double num1 = 0;
             double num2 = 0;
@@ -132,12 +135,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 double result = num1 / num2;
-                resultado.setText(String.valueOf(result));
+                binding.resultado.setText(String.valueOf(result));
 
             }
             catch (Exception e)
             {
-                Toast.makeText(this, "No introduzcas caracteres no numéricos", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
             }
 
 
